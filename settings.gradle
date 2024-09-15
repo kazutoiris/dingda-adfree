@@ -1,0 +1,2 @@
+rootProject.name = "Dingda ADFree"
+include ':app'
