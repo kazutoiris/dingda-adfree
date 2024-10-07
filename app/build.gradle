@@ -6,7 +6,7 @@ plugins {
 
 android {
     compileSdk 34
-    
+
     android {
         buildFeatures {
             buildConfig true
@@ -17,8 +17,8 @@ android {
         applicationId "com.dingda.adfree"
         minSdk 26
         targetSdk 34
-        versionCode 10
-        versionName '1.0'
+        versionCode 11
+        versionName '1.1'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

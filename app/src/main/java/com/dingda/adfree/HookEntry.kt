@@ -31,56 +31,82 @@ object HookEntry : IYukiHookXposedInit {
                             name = "getClassLoader"
                         }?.get(app)?.invoke() as ClassLoader?
 
-                    "com.ziytek.webapi.bizom.v1.RetGetAPPAds".toClass().method {
-                        name = "getAdChannel"
-                    }.hook {
-                        before { result = "" }
-                    }
+                    "com.ziytek.webapi.bizom.v1.RetGetAPPAds".toClass().apply {
+                        method {
+                            name = "getAdChannel"
+                        }.hook {
+                            before { result = "" }
+                        }
 
-                    "com.ziytek.webapi.bizom.v1.RetGetAPPAds".toClass().method {
-                        name = "getMedia1"
-                    }.hook {
-                        before { result = "" }
-                    }
-
-                    "com.dingda.app.ui.activity.MainActivity".toClass().method {
-                        name = "D"
-                    }.hook {
-                        before {
-                            args(0).setFalse()
+                        method {
+                            name = "getMedia1"
+                        }.hook {
+                            before { result = "" }
                         }
                     }
 
-                    "com.dingda.app.ui.activity.MainActivity".toClass().method {
-                        name = "V"
+                    "com.ziytek.webapi.mt.v1.retSysInfo".toClass().method {
+                        name = "getAppver"
                     }.hook {
                         before {
-                            args(0).setFalse()
+                            result = "ios:9999.9999.9999:0;android:9999.9999.9999:0"
                         }
                     }
 
-                    "com.dingda.app.ui.activity.MainActivity".toClass().method {
-                        name = "H"
-                    }.hook {
-                        replaceUnit { }
+                    "com.dingda.app.ui.activity.MainActivity".toClass().apply {
+                        method {
+                            name = "f0"
+                        }.hook {
+                            before {
+                                args(0).setFalse()
+                            }
+                        }
+
+                        method {
+                            name = "x0"
+                        }.hook {
+                            before {
+                                args(0).setFalse()
+                            }
+                        }
+
+                        method {
+                            name = "E0"
+                        }.hook {
+                            replaceUnit { }
+                        }
+
+                        method {
+                            name = "m0"
+                        }.hook {
+                            replaceUnit { }
+                        }
                     }
 
-                    "com.dingda.app.ui.fragment.homefragment.HomeFragment".toClass().method {
-                        name = "b2"
-                    }.hook {
-                        replaceUnit { }
-                    }
+                    "com.dingda.app.ui.fragment.homefragment.HomeFragment".toClass().apply {
+                        method {
+                            name = "showCardTimeOutBanner"
+                        }.hook {
+                            replaceUnit { }
+                        }
 
-                    "com.dingda.app.ui.fragment.homefragment.HomeFragment".toClass().method {
-                        name = "showCardTimeOutBanner"
-                    }.hook {
-                        replaceUnit { }
-                    }
+                        method {
+                            name = "f2"
+                        }.hook {
+                            replaceUnit { }
+                        }
 
-                    "com.dingda.app.ui.fragment.homefragment.HomeFragment".toClass().method {
-                        name = "J2"
-                    }.hook {
-                        replaceUnit { }
+                        method {
+                            name = "Q2"
+                        }.hook {
+                            replaceUnit { }
+                        }
+
+                        method {
+                            name = "O2"
+                        }.hook {
+                            replaceUnit { }
+                        }
                     }
                 }
             }.onAllFailure {
